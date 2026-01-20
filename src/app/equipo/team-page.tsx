@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Users, Shield, Award, TrendingUp, Phone, ArrowRight } from "lucide-react";
 import { TeamCard, Button } from "@/components/ui";
 import { TEAM_MEMBERS, TEAM_HIGHLIGHTS, COMPANY_INFO } from "@/lib/data";
+import { CTASection } from "@/components/sections";
 
 export const TeamPage = () => {
   return (
@@ -228,42 +229,7 @@ export const TeamPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 bg-slate-50 dark:bg-slate-900/50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-              ¿Listo para trabajar con nosotros?
-            </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-400 mb-8">
-              Nuestro equipo está preparado para atender su proyecto con la
-              mayor profesionalidad.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button
-                variant="primary"
-                size="lg"
-                href="/contacto"
-                rightIcon={<ArrowRight className="w-5 h-5" aria-hidden="true" />}
-              >
-                Solicitar Cotización
-              </Button>
-              <Button
-                variant="whatsapp"
-                size="lg"
-                href={COMPANY_INFO.whatsappLink}
-                leftIcon={<Phone className="w-5 h-5" aria-hidden="true" />}
-              >
-                Contactar por WhatsApp
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <CTASection />
     </>
   );
 };

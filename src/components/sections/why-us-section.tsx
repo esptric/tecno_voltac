@@ -55,23 +55,7 @@ const reasons = [
   },
 ];
 
-const colorClasses = {
-  primary: {
-    bg: "bg-primary/10",
-    text: "text-primary",
-    border: "border-primary/20",
-  },
-  accent: {
-    bg: "bg-accent/10",
-    text: "text-accent",
-    border: "border-accent/20",
-  },
-  secondary: {
-    bg: "bg-secondary/10",
-    text: "text-secondary",
-    border: "border-secondary/20",
-  },
-};
+
 
 export const WhyUsSection = () => {
   return (
@@ -88,55 +72,49 @@ export const WhyUsSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-12 md:mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-yellow-400/10 text-yellow-400 text-sm font-medium mb-4">
             ¿Por qué elegirnos?
           </span>
           <h2
             id="why-us-heading"
             className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4"
           >
-            Confíe en los <span className="text-primary">expertos</span>
+            Confíe en los <span className="text-primary dark:text-yellow-400">expertos</span>
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-400">
-            En Tecnovoltac combinamos experiencia, certificaciones y compromiso
+            En <span className="text-primary font-semibold dark:text-yellow-400">Tecnovoltac</span> combinamos experiencia, certificaciones y compromiso
             para ofrecerle el mejor servicio técnico de la región.
           </p>
         </motion.div>
 
         {/* Reasons Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {reasons.map((reason, index) => {
-            const colors = colorClasses[reason.color as keyof typeof colorClasses];
-            return (
-              <motion.article
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-              >
-                <div
-                  className={`inline-flex items-center justify-center w-14 h-14 rounded-xl ${colors.bg} ${colors.text} mb-4 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <reason.icon className="w-7 h-7" aria-hidden="true" />
-                </div>
+          {reasons.map((reason, index) => (
+            <motion.article
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group relative p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-yellow-400 dark:hover:border-yellow-400 overflow-hidden"
+            >
+              {/* Decoration Element */}
+              <div className="absolute -right-8 -top-8 w-32 h-32 bg-yellow-400/5 rounded-full blur-3xl group-hover:bg-yellow-400/10 transition-all duration-500" />
 
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-                  {reason.title}
-                </h3>
+              <div className="relative z-10">
+                <div className="flex items-center gap-4 mb-4">
+                  <reason.icon className="w-10 h-10 text-yellow-400 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                    {reason.title}
+                  </h3>
+                </div>
 
                 <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                   {reason.description}
                 </p>
-
-                {/* Decorative corner */}
-                <div
-                  className={`absolute top-0 right-0 w-20 h-20 ${colors.bg} rounded-bl-full opacity-50 group-hover:opacity-100 transition-opacity`}
-                />
-              </motion.article>
-            );
-          })}
+              </div>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>

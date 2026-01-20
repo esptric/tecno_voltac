@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { Navbar, Footer, WhatsAppButton } from "@/components/global";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -100,7 +101,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es-CO" className="scroll-smooth">
+    <html lang="es-CO" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -108,12 +109,19 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${outfit.variable} antialiased font-sans bg-background text-foreground`}
       >
-        <Navbar />
-        <main id="main-content" className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
-        <WhatsAppButton />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <main id="main-content" className="min-h-screen">
+            {children}
+          </main>
+          <Footer />
+          <WhatsAppButton />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -31,21 +31,19 @@ export const ServiceCard = ({
     return (
       <Link
         href={`/servicios#${service.id}`}
-        className="group block"
+        className="group block "
         aria-label={`Ver más sobre ${service.title}`}
       >
         <article className="relative overflow-hidden rounded-2xl bg-white dark:bg-slate-800 p-6 shadow-lg shadow-slate-200/50 dark:shadow-slate-900/50 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-slate-100 dark:border-slate-700">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/10 to-transparent rounded-bl-full" />
-          
+          <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-bl from-primary/10 to-transparent rounded-bl-full" />
+
           <div className="relative">
-            <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/80 text-white mb-4 shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform duration-300">
-              <IconComponent className="w-7 h-7" aria-hidden="true" />
+            <div className="flex flex-row gap-2 items-center justify-start text-primary dark:text-white mb-4  group-hover:scale-110 transition-transform duration-300">
+              <IconComponent className="w-10 h-10" aria-hidden="true" />
+              <h3 className="text-lg font-bold text-primary dark:text-white">
+                {service.title}
+              </h3>
             </div>
-
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
-              {service.title}
-            </h3>
-
             <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
               {service.shortDescription}
             </p>
@@ -82,8 +80,8 @@ export const ServiceCard = ({
       className="scroll-mt-24 rounded-2xl bg-white dark:bg-slate-800 p-8 shadow-xl shadow-slate-200/50 dark:shadow-slate-900/50 border border-slate-100 dark:border-slate-700"
     >
       <div className="flex flex-col lg:flex-row gap-8">
-        <div className="flex-shrink-0">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-white shadow-lg shadow-primary/30">
+        <div className="shrink-0">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-linear-to-br from-primary to-primary/80 text-white shadow-lg shadow-primary/30">
             <IconComponent className="w-10 h-10" aria-hidden="true" />
           </div>
         </div>
@@ -119,7 +117,7 @@ export const ServiceCard = ({
                     key={index}
                     className="flex items-start gap-3 text-slate-600 dark:text-slate-400"
                   >
-                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                    <span className="shrink-0 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
                       <span className="w-2 h-2 rounded-full bg-primary" />
                     </span>
                     {feature}
@@ -139,7 +137,7 @@ export const ServiceCard = ({
                     key={index}
                     className="flex items-start gap-3 text-slate-600 dark:text-slate-400"
                   >
-                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-secondary/10 flex items-center justify-center mt-0.5">
+                    <span className="shrink-0 w-5 h-5 rounded-full bg-secondary/10 flex items-center justify-center mt-0.5">
                       <span className="w-2 h-2 rounded-full bg-secondary" />
                     </span>
                     {benefit}

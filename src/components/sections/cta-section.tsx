@@ -2,8 +2,10 @@
 
 import { motion } from "framer-motion";
 import { Phone, ArrowRight, Shield, Clock, CheckCircle } from "lucide-react";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Button } from "@/components/ui";
 import { COMPANY_INFO } from "@/lib/data";
+import Link from "next/link";
 
 const benefits = [
   { icon: Shield, text: "Sin compromiso" },
@@ -14,17 +16,10 @@ const benefits = [
 export const CTASection = () => {
   return (
     <section
-      className="relative py-16 md:py-24 overflow-hidden"
+      className="relative py-16 md:py-24 overflow-hidden bg-slate-900 dark:bg-slate-900"
       aria-labelledby="cta-heading"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/90" />
-      
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-white/5 rounded-full translate-x-1/2 translate-y-1/2" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/5 rounded-full" />
-
+      <BackgroundBeams className="absolute inset-0" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <motion.div
@@ -75,23 +70,25 @@ export const CTASection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-col sm:flex-row justify-center gap-4"
           >
-            <Button
-              variant="secondary"
-              size="lg"
-              href="/contacto"
-              rightIcon={<ArrowRight className="w-5 h-5" aria-hidden="true" />}
-              className="bg-primary text-primary hover:bg-white/90 hover:text-primary"
-            >
-              Solicitar Cotización
-            </Button>
-            <Button
-              variant="whatsapp"
-              size="lg"
-              href={COMPANY_INFO.whatsappLink}
-              leftIcon={<Phone className="w-5 h-5" aria-hidden="true" />}
-            >
-              Llamar Ahora
-            </Button>
+            <Link href="/contacto">
+              <Button
+                variant="secondary"
+                size="lg"
+                className="bg-primary text-white hover:bg-primary/60 hover:text-white dark:text-slate-900"
+              >
+                <ArrowRight className="w-5 h-5" aria-hidden="true" />
+                Solicitar Cotización
+              </Button>
+            </Link>
+
+            <Link href={COMPANY_INFO.whatsappLink}>
+              <Button
+                size="lg"
+                className="bg-primary text-white hover:bg-primary/60 hover:text-white dark:text-slate-900"
+              >
+                <Phone className="w-5 h-5" aria-hidden="true" />
+                Llamar Ahora
+              </Button></Link>
           </motion.div>
 
           {/* Contact info */}

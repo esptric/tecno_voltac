@@ -36,7 +36,6 @@ export const SERVICES: Service[] = [
       "Asesoría técnica gratuita",
       "Garantía extendida en todos nuestros trabajos",
     ],
-    certifications: ["RETIE"],
   },
   {
     id: "instalaciones-gas",

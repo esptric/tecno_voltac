@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, MessageCircle, Shield } from "lucide-react";
 import { ContactForm, Button } from "@/components/ui";
 import { COMPANY_INFO } from "@/lib/data";
+import Link from "next/link";
 
 const contactMethods = [
   {
@@ -103,9 +104,8 @@ export const ContactPage = () => {
                     aria-label={`${method.title}: ${method.value}`}
                   >
                     <div
-                      className={`inline-flex items-center justify-center w-12 h-12 rounded-xl ${
-                        colorClasses[method.color as keyof typeof colorClasses]
-                      } mb-4`}
+                      className={`inline-flex items-center justify-center w-12 h-12 rounded-xl ${colorClasses[method.color as keyof typeof colorClasses]
+                        } mb-4`}
                     >
                       <method.icon className="w-6 h-6" aria-hidden="true" />
                     </div>
@@ -122,9 +122,8 @@ export const ContactPage = () => {
                 ) : (
                   <div className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
                     <div
-                      className={`inline-flex items-center justify-center w-12 h-12 rounded-xl ${
-                        colorClasses[method.color as keyof typeof colorClasses]
-                      } mb-4`}
+                      className={`inline-flex items-center justify-center w-12 h-12 rounded-xl ${colorClasses[method.color as keyof typeof colorClasses]
+                        } mb-4`}
                     >
                       <method.icon className="w-6 h-6" aria-hidden="true" />
                     </div>
@@ -232,18 +231,14 @@ export const ContactPage = () => {
                   Nuestro equipo está disponible para responder sus consultas
                   y agendar visitas técnicas. Respuesta garantizada en minutos.
                 </p>
-
-                <Button
-                  variant="whatsapp"
-                  size="lg"
-                  href={COMPANY_INFO.whatsappLink}
-                  className="w-full bg-white text-[#25D366] hover:bg-white/90"
-                  leftIcon={
-                    <MessageCircle className="w-5 h-5" aria-hidden="true" />
-                  }
-                >
-                  Escribir por WhatsApp
-                </Button>
+                <Link href={COMPANY_INFO.whatsappLink}>
+                  <Button
+                    size="lg"
+                    className="w-full bg-white text-[#25D366] hover:bg-white/90"
+                  >
+                    Escribir por WhatsApp<MessageCircle className="w-5 h-5" aria-hidden="true" />
+                  </Button>
+                </Link>
               </div>
 
               {/* Service Area */}
