@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tecnovoltac - Servicios Técnicos Especializados
 
-## Getting Started
+Sitio web oficial de **Tecnovoltac**, una empresa líder en servicios técnicos de instalaciones eléctricas, gas y acabados con sede en Pereira, Colombia. Este proyecto presenta una interfaz moderna y profesional para mostrar los servicios, el equipo y la información de contacto de la empresa.
 
-First, run the development server:
+## 🚀 Descripción del Proyecto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Tecnovoltac se especializa en ofrecer soluciones confiables y seguras, cumpliendo con normativas como RETIE. Este sitio web ha sido diseñado para reflejar la calidad y profesionalismo de la empresa, proporcionando a los clientes una experiencia de usuario fluida y accesible desde cualquier dispositivo.
+
+## ✨ Características Principales
+
+- **Diseño Moderno y Responsivo:** Adaptado perfectamente a móviles, tablets y escritorio.
+- **Animaciones Interactivas:** Uso de Framer Motion para transiciones suaves y elementos dinámicos (tarjetas en movimiento, efectos de fondo).
+- **Modo Oscuro/Claro:** Soporte nativo para cambio de tema visual.
+- **Optimización SEO:** Estructura optimizada para motores de búsqueda.
+- **Navegación Intuitiva:** Acceso rápido a Servicios, Nosotros, Equipo y Contacto.
+- **Componentes UI Avanzados:** Integración de componentes visuales atractivos como "Background Beams" y "Moving Borders".
+
+## 🛠️ Tecnologías Utilizadas
+
+Este proyecto está construido con un stack tecnológico moderno y robusto:
+
+- **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
+- **Lenguaje:** [TypeScript](https://www.typescriptlang.org/)
+- **Estilos:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animaciones:** [Framer Motion](https://www.framer.com/motion/) & [Motion](https://motion.dev/)
+- **Iconos:** [Lucide React](https://lucide.dev/) & [Tabler Icons](https://tabler.io/icons)
+- **Componentes UI:** [Radix UI](https://www.radix-ui.com/) (primitivas accesibles)
+
+## 📦 Instalación y Uso Local
+
+Sigue estos pasos para ejecutar el proyecto en tu entorno local:
+
+1.  **Clonar el repositorio:**
+
+    ```bash
+    git clone <URL_DEL_REPOSITORIO>
+    cd tecno_voltac
+    ```
+
+2.  **Instalar dependencias:**
+
+    ```bash
+    npm install
+    # o
+    yarn install
+    # o
+    pnpm install
+    # o
+    bun install
+    ```
+
+3.  **Ejecutar el servidor de desarrollo:**
+
+    ```bash
+    npm run dev
+    # o
+    yarn dev
+    # o
+    pnpm dev
+    # o
+    bun dev
+    ```
+
+4.  **Ver el sitio:**
+    Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
+
+## 📂 Estructura del Proyecto
+
+```
+src/
+├── app/              # Páginas y layout principal (App Router)
+├── components/       # Componentes reutilizables
+│   ├── global/       # Navbar, Footer, etc.
+│   ├── sections/     # Secciones completas de páginas (Hero, CTA, etc.)
+│   └── ui/           # Componentes de interfaz (botones, tarjetas, efectos)
+├── lib/              # Utilidades y datos estáticos
+│   └── data/         # Información de la empresa, servicios y equipo
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📜 Scripts Disponibles
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `npm run dev`: Inicia el servidor de desarrollo.
+- `npm run build`: Construye la aplicación para producción.
+- `npm run start`: Inicia el servidor de producción.
+- `npm run lint`: Ejecuta el linter para verificar la calidad del código.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📄 Licencia
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Este proyecto es propiedad de **Tecnovoltac**. Todos los derechos reservados.
