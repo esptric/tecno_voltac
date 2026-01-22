@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, Home, RotateCcw, AlertTriangle } from "lucide-react";
+import { Home, RotateCcw, AlertTriangle } from "lucide-react";
 import { useTheme } from "next-themes";
 import Lightning from "@/components/Lightning";
 import { NumberTicker } from "@/components/ui/number-ticker";

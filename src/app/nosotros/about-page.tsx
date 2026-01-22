@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import {
-  Target,
+
   Eye,
   Heart,
   Shield,
@@ -10,7 +10,7 @@ import {
   Briefcase,
   CheckCircle,
   Lightbulb,
-  ArrowRight,
+
   type LucideIcon,
 } from "lucide-react";
 import {

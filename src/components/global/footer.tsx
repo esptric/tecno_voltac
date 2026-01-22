@@ -17,10 +17,10 @@ import { useState, useEffect } from "react";
 
 export const Footer = () => {
   const [logoError, setLogoError] = useState(false);
-  const [currentYear, setCurrentYear] = useState<number | null>(null);
+  const [currentYear, setCurrentYear] = useState<string>("");
 
   useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
+    setCurrentYear(new Date().getFullYear().toString());
   }, []);
 
   return (

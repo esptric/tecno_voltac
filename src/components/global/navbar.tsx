@@ -9,11 +9,13 @@ import { NAV_LINKS, COMPANY_INFO } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import Image from "next/image";
+import ElectricBorder from "@/components/ElectricBorder";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [logoError, setLogoError] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -90,18 +92,36 @@ export const Navbar = () => {
           <div className="hidden md:flex items-center gap-1">
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href;
-              return (
+              const isHovered = hoveredLink === link.href;
+
+              const linkContent = (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={`px-4 py-2 border-b border-transparent font-medium transition-all ${isActive
-                    ? "text-primary border-b border-blue-500"
-                    : "text-slate-600  dark:text-slate-300 hover:text-primary hover:border-b hover:border-blue-500"
+                    ? "text-primary "
+                    : "text-slate-600  dark:text-slate-300 hover:text-primary "
                     }`}
                   aria-current={isActive ? "page" : undefined}
+                  onMouseEnter={() => setHoveredLink(link.href)}
+                  onMouseLeave={() => setHoveredLink(null)}
                 >
                   {link.label}
                 </Link>
+              );
+
+              return isHovered ? (
+                <ElectricBorder
+                  key={link.href}
+                  color="#3b82f6"
+                  speed={1}
+                  chaos={0.08}
+                  borderRadius={8}
+                >
+                  {linkContent}
+                </ElectricBorder>
+              ) : (
+                linkContent
               );
             })}
           </div>

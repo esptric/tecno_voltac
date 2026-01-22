@@ -2,11 +2,11 @@
 import { useState, useEffect } from "react";
 
 export default function PrivacyPage() {
-    const [currentDate, setCurrentDate] = useState<string | null>(null);
-
+    const [currentDate, setCurrentDate] = useState<string>("");
     useEffect(() => {
         setCurrentDate(new Date().toLocaleDateString("es-CO"));
     }, []);
+
     return (
         <section className="py-24 md:py-32 bg-white dark:bg-slate-900">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Users, Shield, Award, TrendingUp } from "lucide-react";
 import { TeamCard } from "@/components/ui/team-card";
 import { NumberTicker } from "@/components/ui/number-ticker";
-
 import { TEAM_MEMBERS, TEAM_HIGHLIGHTS } from "@/lib/data";
 import { CTASection } from "@/components/sections";
 
